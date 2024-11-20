@@ -1,6 +1,8 @@
 site_name: Recursive Thinker
 nav:
   - Home: index.md
+  - Git Workflow: git_workflow.md
+  - XFCE Setup: xfce_setup.md
 theme:
   name: material
   features:
