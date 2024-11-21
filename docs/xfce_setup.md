@@ -2,19 +2,17 @@
 
 ## Add the user to sudo.
 
+Switch to root.
 ```
-su -c "echo '$(whoami) ALL=(ALL:ALL) ALL' | EDITOR='tee -a' visudo"
+su root
 ```
-1. `su -c` runs the following command as the superuser (root)
-2. `echo '$(whoami) ALL=(ALL:ALL) ALL'` creates the line to be added to the
-   sudoers file, using whoami to get the current username
-3. `|` pipes the output of echo to the next command
-4. `EDITOR='tee -a'` sets the editor for visudo to tee -a, which appends the
-   input to the file
-5. `visudo` opens the sudoers file safely
 
-This command will prompt you for the root password. After entering it, it will
-add the current user to the sudoers file.
+Add your user to the sudo group.
+```
+sudo usermod -aG sudo $USERNAME
+```
+
+Now exit, logout and log back in for the group changes to take effect.
 
 ## Set default editor to vi.
 
@@ -50,12 +48,9 @@ git clone --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ### Fetch the config files.
 
 ```
-wget https://raw.githubusercontent.com/recursivethinker/config-files/main/vim/.vimrc\
--O ~/.vimrc
+wget https://raw.githubusercontent.com/recursivethinker/config-files/main/vim/.vimrc -O ~/.vimrc
 
-wget\
-https://raw.githubusercontent.com/recursivethinker/config-files/main/tmux/.tmux.conf\
--O ~/.tmux.conf
+wget https://raw.githubusercontent.com/recursivethinker/config-files/main/tmux/.tmux.conf -O ~/.tmux.conf
 ```
 
 ## Cosmetic upgrades to the XFCE desktop.
