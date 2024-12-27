@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - Git Workflow: git_workflow.md
   - XFCE Setup: xfce_setup.md
+  - SSH Tripwire: ssh_tripwire.md
 theme:
   name: material
   features:
